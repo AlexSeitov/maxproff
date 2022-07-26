@@ -1,0 +1,36 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.btn {
+  display: inline-block;
+  padding: rem(12) rem(24);
+  color: $white;
+  line-height: lh(19, 16);
+  background-color: $btnColor;
+  border: none;
+  border-radius: $btnRadius;
+  outline: none;
+  cursor: pointer;
+  transition-duration: $transition;
+  transition-property: color, background-color;
+
+  &.btn-transparent {
+    color: $primaryColor;
+    background-color: transparent;
+    border: 1px solid $primaryColor;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $white;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $btnColorHover;
+    }
+  }
+}

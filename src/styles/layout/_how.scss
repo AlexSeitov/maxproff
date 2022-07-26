@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.how {
+  padding-bottom: rem(60);
+
+  // .how__title
+
+  &__title {
+    text-align: center;
+  }
+
+  // .how__text
+
+  &__text {
+    max-width: rem(772);
+    margin-right: auto;
+    margin-bottom: rem(42);
+    margin-left: auto;
+    font-size: rem(18);
+    text-align: center;
+
+    @media (min-width: $md) {
+      margin-bottom: rem(70);
+    }
+  }
+
+  // .how__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  // .how__list-item
+
+  &__list-item {
+    flex: 1 0 50%;
+    margin-bottom: rem(20);
+    padding: 0 rem(10);
+    text-align: center;
+
+    @media (min-width: $lg) {
+      flex: 1 0 rem(147);
+    }
+  }
+
+  // .how__list-icon
+
+  &__list-icon {
+    width: rem(50);
+    margin-right: auto;
+    margin-bottom: rem(18);
+    margin-left: auto;
+
+    @media (min-width: $sm) {
+      width: rem(70);
+    }
+  }
+
+  // .how__list-text
+
+  &__list-text {
+    font-weight: 500;
+  }
+}

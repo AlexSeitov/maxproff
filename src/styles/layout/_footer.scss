@@ -1,0 +1,81 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.footer {
+  color: $white;
+  background-color: $footerBgColor;
+
+  // .footer__row
+
+  &__row {
+    display: flex;
+    flex-flow: column wrap;
+    padding: rem(35) 0;
+    text-align: center;
+
+    @media (min-width: $sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+    display: block;
+    align-self: center;
+  }
+
+  // .footer__menu-title
+
+  &__menu-title {
+    margin-bottom: rem(15);
+    color: $primaryColorLight;
+    text-transform: uppercase;
+  }
+
+  // .footer__menu-list
+
+  &__menu-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  // .footer__menu-link
+
+  &__menu-link {
+    display: inline-block;
+    padding: rem(5) 0;
+    color: $white;
+    font-size: rem(15);
+    text-decoration: none;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: rem(28) 0 rem(18);
+  font-size: rem(14);
+  border-top: 1px solid $white;
+
+  // .footer-copyright__item
+
+  &__item {
+    margin-bottom: rem(10);
+    color: rgba($white, 60%);
+
+    &:first-child {
+      margin-right: rem(20);
+    }
+  }
+}

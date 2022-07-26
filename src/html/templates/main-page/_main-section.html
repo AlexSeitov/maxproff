@@ -1,0 +1,143 @@
+<section class="main-section">
+  <div class="container">
+    <div class="main-section__bg-wrap">
+      <picture>
+        <source srcset="images/main-section/main-section-xl.webp" type="image/webp" media="(min-width: 1230px)">
+        <source srcset="images/main-section/main-section-lg.webp" type="image/webp" media="(min-width: 1024px)">
+        <source srcset="images/main-section/main-section-md.webp" type="image/webp" media="(min-width: 768px)">
+        <source srcset="images/main-section/main-section-sm.webp" type="image/webp" media="(min-width: 568px)">
+        <source srcset="images/main-section/main-section-esm.webp" type="image/webp">
+        <source srcset="images/main-section/main-section-xl.jpg" type="image/jpg" media="(min-width: 1230px)" />
+        <source srcset="images/main-section/main-section-lg.jpg" type="image/jpg" media="(min-width: 1024px)" />
+        <source srcset="images/main-section/main-section-md.jpg" type="image/jpg" media="(min-width: 768px)" />
+        <source srcset="images/main-section/main-section-sm.jpg" type="image/jpg" media="(min-width: 568px)" />
+        <img class="main-section__bg-img" src="images/main-section/main-section-esm.jpg" alt="РЕМОНТ КВАРТИР В МОСКВЕ И МО" />
+     </picture>
+    </div>
+
+    <div class="main-section__content">
+      <div class="main-section__heading">
+        <h1 class="main-section__title h1">РЕМОНТ КВАРТИР В МОСКВЕ И МО</h1>
+        
+        <div class="main-section__price">от <span>2450</span> руб/м2</div>
+  
+        <div class="main-section__info">
+          <div class="main-section__info-item">
+              <img class="main-section__info-icon" src="images/main-section/main-section-icon-1.svg" width="60" height="60" alt="иконка">
+            
+            <p class="main-section__info-text">Оплата по факту приема работ</p>
+          </div>
+          <div class="main-section__info-item">
+              <img class="main-section__info-icon" src="images/main-section/main-section-icon-2.svg" width="60" height="60" alt="иконка">
+            <p class="main-section__info-text">Замер и составление сметы БЕСПЛАТНО</p>
+          </div> 
+          <div class="main-section__info-item">
+            <img class="main-section__info-icon" src="images/main-section/main-section-icon-3.svg" width="60" height="60" alt="иконка">
+            <p class="main-section__info-text">Выезд сметчика</p>
+          </div>
+          <div class="main-section__info-item">
+            <img class="main-section__info-icon" src="images/main-section/main-section-icon-4.svg" width="60" height="60" alt="иконка">
+            <p class="main-section__info-text">Гарантия 3 года</p>
+          </div>
+        </div>
+      </div>
+  
+      <form action="/" class="main-section__calculate-form calculate-form">
+        <fieldset class="calculate-form__field">
+          <legend class="calculate-form__legend">расчитайте стоимость ремонта</legend>
+  
+          <div class="calculate-form__row calculate-form__row_border">
+            <div class="calculate-form__title">Вид ремонта:</div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type-of-repair" id="cosmetic" value="Косметический" required>
+              <label for="cosmetic" class="calculate-form__label">Косметический</label>
+            </div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type-of-repair" id="capital" value="Капитальный">
+              <label for="capital" class="calculate-form__label">Капитальный</label>
+            </div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type-of-repair" id="full-construction" value="Под ключ">
+              <label for="full-construction" class="calculate-form__label">Под ключ</label>
+            </div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type-of-repair" id="designer" value="Дизайнерский">
+              <label for="designer" class="calculate-form__label">Дизайнерский</label>
+            </div>
+          </div>
+  
+          <div class="calculate-form__row calculate-form__row_border">
+            <div class="calculate-form__title">Тип вашей недвижимости:</div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type-of-housing" id="new-house" value="Новостройка" required>
+              <label for="new-house" class="calculate-form__label">Новостройка</label>
+            </div>
+  
+            <div class="calculate-form__group">
+              <input type="radio" name="type of housing" id="secondary-house" value="Вторичное жилье">
+              <label for="secondary-house" class="calculate-form__label">Вторичное жилье</label>
+            </div>
+          </div>
+  
+          <div class="calculate-form__row calculate-form__row_border calculate-form__row_pb">
+            <div class="calculate-form__title">Количество комнат:</div>
+            <div class="calculate-form__nums-group">
+              <input class="radio-nums-of-rooms" type="radio" name="number-of-rooms" id="one-room" value="1" required>
+              <label for="one-room" class="calculate-form__label nums-label">1</label>
+            </div>
+  
+            <div class="calculate-form__nums-group">
+              <input class="radio-nums-of-rooms" type="radio" name="number-of-rooms" id="two-room" value="2">
+              <label for="two-room" class="calculate-form__label nums-label">2</label>
+            </div>
+  
+            <div class="calculate-form__nums-group">
+              <input class="radio-nums-of-rooms" type="radio" name="number-of-rooms" id="three-room" value="3">
+              <label for="three-room" class="calculate-form__label nums-label">3</label>
+            </div>
+  
+            <div class="calculate-form__nums-group">
+              <input class="radio-nums-of-rooms" type="radio" name="number-of-rooms" id="four-room" value="4">
+              <label for="four-room" class="calculate-form__label nums-label">4</label>
+            </div>
+          </div>
+  
+          <div class="calculate-form__row calculate-form__row_pb">
+            <div class="calculate-form__title">Площадь, м2:</div>
+            <div class="calculate-form__range-group">
+              <input class="calculate-form__range-input" type="range" name="apartment-area" id="form-range-input" min="20" max="300" value="70">
+              <label for="form-range-input" class="calculate-form__range-result" id="form-range-result"></label>
+            </div>
+          </div>
+  
+          <div class="calculate-form__row calculate-form__info">
+            <div class="calculate-form__info-text">
+              <span>Срок ремонта:</span>
+              <span>до 34 дней</span>
+            </div>
+  
+            <div class="calculate-form__info-text">
+              <span>Скидка составит:</span>
+              <span>23 765 руб</span>
+            </div>
+          </div>
+  
+          <div class="calculate-form__row">
+            <div class="calculate-form__title">Введите номер телефона</div>
+  
+            <div class="calculate-form__tel-group">
+              <input class="calculate-form__tel-input" type="tel" name="phone" id="calculate-form-tel" placeholder="+7 (__) ___-__-__" data-tel-input required>
+              <button class="calculate-form__btn btn" type="submit">Заказать</button>
+            </div>
+          </div>
+          
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>

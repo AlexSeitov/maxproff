@@ -1,0 +1,44 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.h1,
+.h2,
+.h3,
+.h4 {
+  margin: 0;
+  font-weight: 700;
+  font-family: serif;
+}
+
+.h1 {
+  margin-bottom: rem(24);
+  font-weight: 700;
+  font-size: rem(30);
+  font-family: $primaryFontFamily;
+  line-height: lh(40, 34);
+
+  @media (min-width: rem(360)) {
+    font-size: rem(34);
+  }
+
+  @media (min-width: $md) {
+    font-size: rem(52);
+  }
+
+  @media (min-width: $xl) {
+    margin-bottom: rem(30);
+  }
+}
+
+.h2 {
+  margin-bottom: rem(50);
+  font-weight: 700;
+  font-size: rem(32);
+  font-family: $primaryFontFamily;
+  line-height: lh(38, 34);
+  text-align: center;
+
+  @media (min-width: $md) {
+    font-size: rem(42);
+  }
+}

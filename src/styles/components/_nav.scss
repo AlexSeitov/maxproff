@@ -1,0 +1,39 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.primary-menu {
+  @media (max-width: rem(767.98)) {
+    position: fixed;
+    top: rem(62);
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding-top: rem(20);
+    background-color: #fff;
+    transform: translateX(200%);
+    transition: transform $transition;
+
+    &.menu-open {
+      transform: translateX(0);
+    }
+
+    &__link {
+      padding: rem(8) rem(15);
+    }
+  }
+
+  @media (min-width: $sm) {
+    width: 50%;
+  }
+}
+
+.menu-open .primary-menu__item {
+  @media (max-width: rem(767.98)) {
+    width: 100%;
+  }
+}
+
+.services-menu {
+  // position: absolute;
+}
