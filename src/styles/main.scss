@@ -1,0 +1,22 @@
+/* vendors */
+@use 'vendors/normalize';
+
+/* base */
+@use 'base/fonts';
+@use 'base/base';
+
+// @use 'components/slider';
+
+/* layout */
+@use 'layout/header';
+@use 'layout/main-section';
+@use 'layout/works';
+@use 'layout/how';
+@use 'layout/prices';
+@use 'layout/footer';
+
+/* components */
+@use 'components/headings';
+@use 'components/button';
+@use 'components/burger';
+@use 'components/nav';

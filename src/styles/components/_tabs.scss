@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as *;
+
+.tabs button[aria-selected='true'] {
+  color: $white;
+  background-color: $secondaryColor;
+}
+
+[hidden] {
+  display: none;
+}

@@ -1,0 +1,152 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use 'sass:color';
+
+.works-slider-inner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.works-slider {
+  align-self: start;
+  width: 100%;
+  margin-left: rem(20);
+  overflow: hidden;
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    flex: 1 0 100%;
+    margin-bottom: rem(20);
+
+    @media (min-width: $sm) {
+      flex: 0 0 60%;
+    }
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info-wrap {
+    flex: 1;
+
+    img {
+      align-self: start;
+      width: rem(17);
+      margin-right: rem(8);
+    }
+
+    @media (min-width: $md) {
+      padding: rem(25);
+    }
+
+    @media (min-width: $lg) {
+      padding: rem(50);
+    }
+  }
+
+  &__info-list {
+    max-width: rem(600);
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style-type: none;
+
+    @media (min-width: $md) {
+      max-width: rem(260);
+      margin: 0 auto;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    font-size: rem(14);
+
+    @media (min-width: $sm) {
+      font-size: rem(16);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(4);
+
+      @media (min-width: $sm) {
+        margin-bottom: rem(6);
+      }
+    }
+  }
+
+  &__info-inner {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__list-of-works {
+    margin: 0;
+    padding: rem(15) 0 0 0;
+    font-size: rem(14);
+    list-style-type: disc;
+
+    @media (min-width: $sm) {
+      padding: rem(15) 0 0 rem(20);
+      font-size: rem(16);
+    }
+
+    li {
+      font-size: rem(12);
+
+      @media (min-width: $sm) {
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+.works-thumbs {
+  order: -1;
+  height: rem(314);
+  overflow: hidden;
+  cursor: pointer;
+
+  .swiper-wrapper > .swiper-slide {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      display: block;
+      background: rgba(rgb(255, 255, 255), 50%);
+      opacity: 1;
+      transition: opacity $transition;
+      content: '';
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-wrapper > .swiper-slide-thumb-active {
+    &::after {
+      opacity: 0;
+    }
+  }
+}

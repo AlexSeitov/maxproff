@@ -1,0 +1,80 @@
+@use '../abstracts/functions';
+@use '../abstracts/variables';
+
+.burger {
+  position: relative;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  width: functions.rem(34);
+  height: functions.rem(26);
+  padding-top: functions.rem(1);
+  border-radius: functions.rem(5);
+  outline: none;
+
+  @media (min-width: variables.$md) {
+    display: none;
+  }
+}
+
+.burger.fixed {
+  position: fixed;
+  animation: show-nav 0.7s;
+}
+
+.burger__btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  pointer-events: none;
+}
+
+.burger__btn span {
+  position: absolute;
+  display: block;
+  width: functions.rem(34);
+  height: functions.rem(4);
+  background-color: variables.$secondaryColor;
+  transform: rotate(0deg);
+  transition: all variables.$transition;
+}
+
+.burger__btn span:nth-child(1) {
+  top: 0;
+}
+
+.burger__btn span:nth-child(2) {
+  top: functions.rem(8);
+}
+
+.burger__btn span:nth-child(3) {
+  top: functions.rem(8);
+}
+
+.burger__btn span:nth-child(4) {
+  top: functions.rem(16);
+}
+
+.burger_active span {
+  background-color: variables.$black;
+}
+
+.burger_active span:nth-child(1) {
+  width: 0;
+}
+
+.burger_active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.burger_active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.burger_active span:nth-child(4) {
+  width: 0;
+}

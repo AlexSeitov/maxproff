@@ -1,0 +1,264 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+$rowGap: rem(14);
+
+.header {
+  padding-top: $rowGap;
+
+  // .header__row
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: $md) {
+      justify-content: initial;
+    }
+
+    @media (min-width: $xl) {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    @media (min-width: $xl) {
+      margin-bottom: $rowGap;
+    }
+  }
+
+  // .header__primary-menu
+
+  &__primary-menu {
+    @media (min-width: $md) {
+      flex: 1 0 100%;
+      order: 4;
+      margin-top: $rowGap;
+    }
+
+    @media (min-width: $xl) {
+      flex: 0 1 auto;
+      order: initial;
+      margin-top: 0;
+    }
+  }
+
+  // .header__phone
+
+  &__phone {
+    @media (min-width: $md) {
+      margin-right: rem(25);
+      margin-left: auto;
+    }
+
+    @media (min-width: $xl) {
+      margin-left: 0;
+    }
+  }
+
+  // .header__btn
+
+  &__btn {
+    display: none;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+  }
+
+  // .header__services-menu
+
+  &__services-menu {
+    @media (min-width: $md) {
+      order: 5;
+    }
+
+    @media (min-width: $xl) {
+      order: initial;
+    }
+  }
+}
+
+.primary-menu {
+  @media (min-width: $md) {
+    display: block;
+    border-top: 1px solid $primaryColor;
+  }
+
+  @media (min-width: $xl) {
+    border: none;
+  }
+
+  // .primary-menu__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @media (min-width: $md) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: $xl) {
+      justify-content: initial;
+    }
+  }
+
+  // .primary-menu__link
+
+  &__link {
+    display: inline-block;
+    padding: $rowGap rem(12);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color $transition;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+
+    @media (min-width: $lg) {
+      padding: $rowGap rem(10);
+    }
+  }
+}
+
+.phone {
+  line-height: lh(21, 16);
+
+  // .phone__link
+
+  &__link {
+    display: flex;
+    padding: rem(10) rem(20);
+    color: inherit;
+    text-decoration: none;
+    background-color: $primaryColor;
+    border-radius: rem(4);
+    cursor: pointer;
+
+    @media (min-width: $md) {
+      align-items: center;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .phone__icon
+
+  &__icon {
+    $smSize: rem(20);
+    $mdSize: rem(16);
+
+    width: $smSize;
+    height: $smSize;
+
+    path {
+      stroke: $white;
+    }
+
+    @media (min-width: $md) {
+      width: $mdSize;
+      height: $mdSize;
+      margin-right: rem(5);
+
+      path {
+        stroke: $black;
+      }
+    }
+  }
+
+  // .phone__nums
+
+  &__nums {
+    display: none;
+
+    @media (min-width: $md) {
+      display: initial;
+      margin-bottom: rem(5);
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: 21px;
+    }
+  }
+
+  // .phone__info
+
+  &__info {
+    display: none;
+
+    @media (min-width: $md) {
+      display: initial;
+      font-size: rem(14);
+      line-height: 16px;
+    }
+  }
+}
+
+.services-menu {
+  $border: 1px solid $primaryColor;
+
+  display: none;
+  flex: 1;
+  border-top: $border;
+  border-bottom: $border;
+
+  @media (min-width: $md) {
+    display: block;
+  }
+
+  // .services-menu__list
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  // .services-menu__link
+
+  &__link {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color $transition;
+
+    @media (min-width: $md) {
+      max-width: rem(114);
+      padding: $rowGap rem(12);
+    }
+
+    @media (min-width: rem(900)) {
+      max-width: initial;
+    }
+
+    @media (min-width: $xl) {
+      padding: $rowGap rem(12);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+  }
+}

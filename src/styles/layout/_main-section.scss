@@ -1,0 +1,372 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../mixins/bg-params' as *;
+
+.main-section {
+  height: rem(600);
+  margin-top: rem(14);
+
+  @media (min-width: $sm) {
+    height: initial;
+  }
+
+  @media (min-width: $md) {
+    margin-top: rem(25);
+  }
+
+  .container {
+    position: relative;
+    overflow: visible;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      background: linear-gradient(90deg, #fff 20%, rgba(255, 255, 255, 0%) 90%);
+      content: '';
+    }
+  }
+
+  &__bg-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @media (min-width: $xl) {
+      right: rem(15);
+      left: rem(15);
+    }
+  }
+
+  &__bg-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: rem(40) 0;
+
+    @media (min-width: $lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-right: rem(40);
+    }
+  }
+
+  // .main-section__title
+
+  &__title {
+    max-width: rem(340);
+
+    @media (min-width: $md) {
+      max-width: rem(540);
+    }
+  }
+
+  // .main-section__price
+
+  &__price {
+    $smfontSize: 30;
+
+    margin-bottom: rem(60);
+    font-weight: 700;
+    font-size: rem($smfontSize);
+    line-height: lh(50, $smfontSize);
+
+    @media (min-width: $md) {
+      font-size: rem(44);
+    }
+
+    span {
+      $smFontSize: 40;
+
+      display: inline-block;
+      padding: 0 rem(10);
+      color: $white;
+      font-size: rem($smFontSize);
+      line-height: lh(50, $smFontSize);
+      background-color: $primaryColor;
+      border-radius: $radius;
+
+      @media (min-width: $md) {
+        font-size: rem(50);
+      }
+    }
+  }
+
+  // .main-section__info
+
+  &__info {
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: rem(500);
+    margin-bottom: rem(30);
+    padding: rem(10);
+    text-align: center;
+    column-gap: rem(10);
+    background-color: rgba($white, 40%);
+    border-radius: $radius;
+    backdrop-filter: blur(2px);
+    row-gap: rem(30);
+
+    @media (min-width: $lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  // .main-section__info-item
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: rem(16);
+
+    @media (min-width: $md) {
+      font-size: rem(18);
+    }
+  }
+
+  &__info-icon {
+    width: auto;
+    height: rem(50);
+    margin: 0 auto;
+    margin-bottom: rem(15);
+
+    @media (min-width: $sm) {
+      height: rem(60);
+    }
+  }
+
+  // .main-section__calculate
+
+  &__calculate-form {
+    @media (max-width: rem(1023.98)) {
+      position: absolute;
+      left: 50%;
+      z-index: 1;
+      width: calc(100% - rem(30));
+      transform: translateX(-50%);
+    }
+
+    top: rem(610);
+
+    @media (min-width: rem(406)) {
+      top: rem(580);
+    }
+
+    @media (min-width: $sm) {
+      top: rem(600);
+    }
+
+    @media (min-width: $md) {
+      top: rem(670);
+    }
+  }
+}
+
+.calculate-form {
+  $rowGapXl: rem(50);
+  $rowGapLg: rem(40);
+
+  &__field {
+    position: relative;
+    margin: 0;
+    padding: rem(85) rem(15) rem(20);
+    background-color: $white;
+    border: none;
+    border-radius: $radius;
+    box-shadow: $shadow;
+
+    @media (min-width: $lg) {
+      max-width: rem(460);
+      padding: rem(65) $rowGapLg rem(30);
+    }
+
+    @media (min-width: $xl) {
+      padding: rem(65) $rowGapXl rem(30);
+    }
+  }
+
+  &__legend {
+    position: absolute;
+    top: rem(35);
+    font-weight: 900;
+    font-size: rem(16);
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: $sm) {
+      font-size: rem(18);
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(18) 0 rem(3);
+
+    &_border {
+      border-bottom: 1px solid $borderColor;
+    }
+
+    &_pb {
+      padding-bottom: rem(18);
+    }
+  }
+
+  &__group {
+    flex: 1 0 100%;
+    margin-bottom: rem(15);
+
+    @media (min-width: rem(375)) {
+      flex: 1 0 50%;
+    }
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  &__nums-group {
+    input {
+      cursor: pointer;
+    }
+  }
+
+  &__nums-group:not(:last-child) {
+    margin-right: rem(24);
+  }
+
+  &__title {
+    flex: 1 0 100%;
+    margin-bottom: rem(18);
+    font-weight: 700;
+  }
+
+  &__label {
+    margin-left: rem(5);
+    font-size: rem(14);
+    cursor: pointer;
+
+    @media (min-width: $sm) {
+      margin-left: rem(10);
+      font-size: rem(16);
+    }
+  }
+
+  &__info {
+    margin-right: rem(-15);
+    margin-left: rem(-15);
+    padding-left: rem(15);
+    background-color: $gray;
+
+    @media (min-width: $lg) {
+      margin-right: -$rowGapLg;
+      margin-left: -$rowGapLg;
+      padding-right: $rowGapLg;
+      padding-left: $rowGapLg;
+    }
+
+    @media (min-width: $xl) {
+      margin-right: -$rowGapXl;
+      margin-left: -$rowGapXl;
+      padding-right: $rowGapXl;
+      padding-left: $rowGapXl;
+    }
+  }
+
+  &__info-text {
+    flex: 1 0 50%;
+    color: $secondaryColor;
+
+    span:first-child {
+      display: block;
+      font-size: rem(14);
+
+      @media (min-width: $sm) {
+        font-size: rem(16);
+      }
+    }
+
+    span:last-child {
+      font-weight: 700;
+      font-size: rem(15);
+
+      @media (min-width: $sm) {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  &__range-group {
+    display: flex;
+    flex: 1;
+  }
+
+  &__range-input {
+    width: calc(100% - 40px);
+    appearance: none;
+
+    &::-webkit-slider-runnable-track {
+      height: rem(4);
+      background-color: $borderColor;
+    }
+
+    &::-webkit-slider-thumb {
+      width: rem(24);
+      height: rem(24);
+      background-color: $secondaryColor;
+      border-radius: 50%;
+      transform: translateY(rem(-10));
+      cursor: pointer;
+      appearance: none;
+    }
+  }
+
+  &__range-result {
+    display: block;
+    width: rem(27);
+    height: rem(24);
+    margin-left: auto;
+  }
+
+  &__tel-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__tel-input {
+    width: 100%;
+    margin-bottom: rem(20);
+    padding: rem(12);
+    border: 1px solid $darkGray;
+    outline: none;
+
+    @media (min-width: $sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    @media (min-width: $sm) {
+      margin-left: rem(15);
+    }
+  }
+}
