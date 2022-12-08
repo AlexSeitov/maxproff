@@ -2,7 +2,6 @@
   "name": "maxproff",
   "version": "1.0.0",
   "description": "",
-  "private": true,
   "type": "module",
   "scripts": {
     "dev": "gulp dev && webpack serve --config ./webpack.dev.js",

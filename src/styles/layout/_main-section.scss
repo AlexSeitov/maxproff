@@ -255,13 +255,15 @@
   }
 
   &__label {
-    margin-left: rem(5);
-    font-size: rem(14);
     cursor: pointer;
 
-    @media (min-width: $sm) {
-      margin-left: rem(10);
-      font-size: rem(16);
+    span {
+      display: inline-block;
+      font-size: rem(14);
+
+      @media (min-width: $sm) {
+        font-size: rem(16);
+      }
     }
   }
 
@@ -312,26 +314,6 @@
   &__range-group {
     display: flex;
     flex: 1;
-  }
-
-  &__range-input {
-    width: calc(100% - 40px);
-    appearance: none;
-
-    &::-webkit-slider-runnable-track {
-      height: rem(4);
-      background-color: $borderColor;
-    }
-
-    &::-webkit-slider-thumb {
-      width: rem(24);
-      height: rem(24);
-      background-color: $secondaryColor;
-      border-radius: 50%;
-      transform: translateY(rem(-10));
-      cursor: pointer;
-      appearance: none;
-    }
   }
 
   &__range-result {

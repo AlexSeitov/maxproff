@@ -11,11 +11,14 @@
     height: 100%;
     padding-top: rem(20);
     background-color: #fff;
-    transform: translateX(200%);
-    transition: transform $transition;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition-duration: $transition;
+    transition-property: transform, visibility;
 
     &.menu-open {
       transform: translateX(0);
+      visibility: visible;
     }
 
     &__link {
@@ -26,14 +29,4 @@
   @media (min-width: $sm) {
     width: 50%;
   }
-}
-
-.menu-open .primary-menu__item {
-  @media (max-width: rem(767.98)) {
-    width: 100%;
-  }
-}
-
-.services-menu {
-  // position: absolute;
 }

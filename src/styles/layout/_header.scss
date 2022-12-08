@@ -94,13 +94,13 @@ $rowGap: rem(14);
   // .primary-menu__list
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style-type: none;
 
     @media (min-width: $md) {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
 

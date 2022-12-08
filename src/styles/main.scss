@@ -5,8 +5,6 @@
 @use 'base/fonts';
 @use 'base/base';
 
-// @use 'components/slider';
-
 /* layout */
 @use 'layout/header';
 @use 'layout/main-section';
@@ -20,3 +18,5 @@
 @use 'components/button';
 @use 'components/burger';
 @use 'components/nav';
+@use 'components/radio-btn';
+@use 'components/range-btn';

@@ -2,7 +2,6 @@
 @use '../abstracts/variables' as *;
 
 .prices {
-  // .prices__title
   padding-top: rem(980);
 
   @media (min-width: rem(375)) {

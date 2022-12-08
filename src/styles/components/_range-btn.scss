@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+input[type='range'] {
+  width: calc(100% - 40px);
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    height: rem(4);
+    background-color: $borderColor;
+  }
+
+  &::-webkit-slider-thumb {
+    width: rem(24);
+    height: rem(24);
+    background-color: $secondaryColor;
+    border-radius: 50%;
+    transform: translateY(rem(-10));
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
